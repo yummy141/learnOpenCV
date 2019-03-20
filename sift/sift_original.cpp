@@ -17,9 +17,8 @@ int main( int argc, char* argv[] )
         cout << "Usage: " << argv[0] << " <Input image>" << endl;
         return -1;
     }
-    //-- Step 1: Detect the keypoints using SURF Detector
-    int minHessian = 400;
-    Ptr<SIFT> detector = SIFT::create( minHessian );
+    //-- Step 1: Detect the keypoints using SIFT Detector
+    Ptr<SIFT> detector = SIFT::create( );
     std::vector<KeyPoint> keypoints;
     detector->detect( src, keypoints );
     //-- Draw keypoints
