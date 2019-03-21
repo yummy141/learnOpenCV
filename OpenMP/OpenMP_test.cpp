@@ -17,7 +17,7 @@ int main( int argc, char* argv[] )
 {
     // CommandLineParser parser( argc, argv, "{@input | ../data/box.png | input image}" );
     double t1 = omp_get_wtime( );
-    #pragma omp parallel for
+#pragma omp parallel for
     for (int i = 0; i <= 944; i++) {
         my_sift_test(i);
     }
@@ -38,7 +38,7 @@ int main( int argc, char* argv[] )
 
 void my_sift_test(int i){
     char s[100];
-    std::sprintf(s, "/home/user/Team/ytwang/color/%06d.jpg", i);
+    std::sprintf(s, "../data/color/%06d.jpg", i);
     string t(s);
     // t = "../data/color/" + t + ".jpg";
 //    cout << i << " " << t << endl;
@@ -46,9 +46,9 @@ void my_sift_test(int i){
     // imshow(t, src);
     // waitKey();
     if (src.empty()) {
-       cout << "Could not open or find the image!\n" << endl;
-       cout << i << endl;
-       // return -1;
+        cout << "Could not open or find the image!\n" << endl;
+        cout << i << endl;
+        // return -1;
     }
     Ptr<SIFT> detector = SIFT::create();
     SiftDescriptorExtractor extractor;
