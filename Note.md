@@ -1,6 +1,16 @@
 ## 安装各种库的网站指南
 > [kezunlin](https://kezunlin.me/)
 
+## PCL1.9.1安装问题
+```
+error: /usr/lib/../lib64/libSM.so: undefined reference to `uuid_unparse_lower@UUID_1.0'
+/usr/lib/../lib64/libSM.so: undefined reference to `uuid_generate@UUID_1.0'
+```
+> [StackOverFlow](https://stackoverflow.com/questions/45584275/getting-error-usr-lib-lib64-libsm-so-undefined-reference-to-uuid-unparse-l)
+
+- 把Anaconda目录从PATH去掉
+
+
 ## OpenCV和vl_sift的区别
 - vl_sift and vl_dsift
     - > [reference](https://stackoverflow.com/questions/41038881/sift-descriptors-values-opencv-vs-vlfeat)
